@@ -1,0 +1,89 @@
+package Assignment1;
+
+import java.util.Scanner;
+
+public class Description {//1.3 User define class
+	//1.2 Pre-define class
+	Scanner sc = new Scanner(System.in);
+	private String destination;
+	private int option;
+	
+	//1.4 Constructor with no argument
+	Description() {
+		System.out.println("\nDescriptions");
+		System.out.println("--------------");
+		purposeBuilt();
+		heritage(); 
+		nature(); 
+	}
+	
+	//1.4 Constructor with 1 argument
+	Description(int o) {
+		this.option = o;
+		
+		System.out.println("\nDescriptions");
+		System.out.println("--------------");
+		
+		if (this.option == 1) 
+			purposeBuilt();
+		else if (this.option == 2)
+			heritage();
+		else if (this.option == 3)
+			nature();
+		else
+			System.out.println("Invalid!");			
+	}
+	
+	//1.4 Constructor with 2 arguments
+	Description(int o, String des) {
+		this.option = o;
+		this.destination = des;
+		
+		System.out.println("\nDescriptions");
+		System.out.println("--------------");
+		
+		if (this.option == 1) {
+			purposeBuilt();
+			pBdes();		
+		}
+		else if (this.option == 2) {
+			heritage();
+			hdes();
+		}
+		else if (this.option == 3) {
+			nature();
+			ndes();
+		}
+		else
+			System.out.println("Invalid!");	
+	}
+		
+	void purposeBuilt() {
+		System.out.println("Petronas Twin Towers:");
+    	System.out.println("The price for per entry per person: RM 219.99\n");
+	}
+	
+	void heritage() {
+		System.out.println("Stadthuys:");
+    	System.out.println("The price for per entry per person: RM 109.99\n");
+	}
+	
+	void nature() {
+		System.out.println("Kinabatangan River:");
+    	System.out.println("The price for per entry per person: RM 79.99\n");
+	}
+	
+	void pBdes() {
+		System.out.println(this.destination + "\n");
+	}
+	
+	void hdes() {
+		System.out.println(this.destination + "\n");
+	}
+	
+	void ndes() {
+		System.out.println(this.destination + "\n");
+	}
+			
+
+}
