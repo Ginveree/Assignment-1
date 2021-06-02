@@ -1,0 +1,24 @@
+package Assignment1;
+
+public class VisitorAttraction {//1.3 User define class
+		String name, developer;
+		
+		//no argument
+		VisitorAttraction() {
+			System.out.println("The name and developer are still unknown.");
+		}
+		
+		//1 argument
+		VisitorAttraction(String n) {
+			this.name = n;
+			System.out.println("************ " + this.name + " ************");
+		}
+		
+		//2 arguments
+		VisitorAttraction(String n, String d) {
+			this.name = n;
+			this.developer = d;
+			System.out.println("************ " + this.name + "************");
+			System.out.println("\t\t" + this.developer);	
+		}
+}
