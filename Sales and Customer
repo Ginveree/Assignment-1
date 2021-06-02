@@ -1,0 +1,93 @@
+package Assignment1;
+
+import java.util.Scanner;
+
+public class SalesNCus {//1.3 User define class
+	//1.2 Pre-define class
+	Scanner sc = new Scanner(System.in);
+	String types[] = {"Petronas Twin Towers", "Stadthuys", "Kinabatangan River"};
+	private String name, coupon;
+	private int choice, quantity, contactNum, memID;
+	private char membership;
+	private int bookingID;
+	private double totalPrice;
+	
+	//1.4 Constructor with 1 argument
+	SalesNCus(int bID) {
+		this.bookingID = bID;
+		registration();
+		System.out.println("Receipt");
+		System.out.println("-------");
+		System.out.print(toString());
+		System.out.print(totalPrice);
+	}	
+	
+	//1.4 Constructor with 2 arguments
+	SalesNCus(int bID, String cp) {
+		this.bookingID = bID;
+		this.coupon = cp;
+		registration();
+		System.out.println("\nReceipt");
+		System.out.println("-------");
+		System.out.print(toString());
+		System.out.print(this.totalPrice - 30.00);
+	}	
+
+	void registration() {
+		System.out.println("\nRegistration Center");
+		System.out.println("-------------------");
+		for (int i = 0; i < types.length; i++) {
+			System.out.println((i+1) + ". " + types[i]);
+		}
+		System.out.print("Please select(1/2/3): ");
+		this.choice = sc.nextInt();
+		System.out.print("Quantity: ");
+		this.quantity = sc.nextInt();
+		System.out.print("Name: ");
+		this.name = sc.next() + sc.nextLine();
+		System.out.print("Contact Number: ");
+		this.contactNum = sc.nextInt();
+		do {
+			System.out.print("Membership(Y/N): ");
+			this.membership = sc.next().charAt(0);
+			
+			if ((this.membership == 'Y') || (this.membership == 'y')) 
+				break;
+			System.out.print("Invalid! ");
+			System.out.print("Membership(Y/N): ");
+			this.membership = sc.next().charAt(0);
+		} while ((this.membership != 'Y') || (this.membership != 'y') || 
+				 (this.membership != 'N') || (this.membership != 'n'));
+		
+		System.out.print("Membership ID: ");
+	    this.memID = sc.nextInt();
+	    
+		if ((this.membership == 'Y') || (this.membership == 'y')) {
+			if (this.choice == 1) 
+				this.totalPrice = pBPrice() - 20.00;
+			else if (this.choice == 2) 
+				this.totalPrice = pBPrice() - 10.00;
+			else if (this.choice == 3)
+				this.totalPrice = pBPrice() - 5.00;
+		}
+	}
+	
+	public double pBPrice() {
+		return 219.99 * this.quantity;
+	}
+	
+	public double hPrice() {
+		return 109.99 * this.quantity;
+	}
+	
+	public double nPrice() {
+		return 79.99 * this.quantity;
+	}
+	
+	public String toString() {
+		return (types[this.choice - 1] + "\nBooking ID: " + this.bookingID + 
+				"\nCoupon Number: " + this.coupon + "\nName: " + this.name 
+				+ "\nQuantity: " + this.quantity + "\nContact Number: " + this.contactNum 
+				+ "\nMembership ID: " + this.memID + "\nTotal Price: RM ");
+	}
+}
