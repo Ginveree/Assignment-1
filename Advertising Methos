@@ -1,0 +1,46 @@
+package Assignment1;
+
+public class AdvertisingMethod {
+	private String OnlineAd1, OnlineAd2;
+	
+	//1.4 Constructor with no argument
+	AdvertisingMethod() {
+		System.out.println("\nAdvertising method");
+		System.out.println("--------------------");
+		offlineAd();	
+	}
+	
+	//1.4 Constructor with 1 arguments
+	AdvertisingMethod(String oAd1) {
+		this.OnlineAd1 = oAd1;
+		
+		System.out.println("\nAdvertising method");
+		System.out.println("--------------------");
+		onlineAd(this.OnlineAd1);	
+	}
+	
+	//1.4 Constructor with 2 arguments
+	AdvertisingMethod(String oAd1, String oAd2) {
+		this.OnlineAd1 = oAd1;
+		this.OnlineAd2 = oAd2;
+		
+		System.out.println("\nAdvertising method");
+		System.out.println("--------------------");
+		onlineAd(this.OnlineAd1, this.OnlineAd2);	
+	}
+	
+	//1 parameter
+	void onlineAd(String a1) {
+		System.out.println("1. " + a1 );
+	}
+	
+	//2 parameters
+	void onlineAd(String a1, String a2) {
+		System.out.println("1. " + a1 + "\n2. " + a2);
+	}
+	
+	void offlineAd() {
+		System.out.println("1. Newspaper\n2. Magazine\n3. Flyers");
+	}
+
+}
