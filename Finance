@@ -1,0 +1,32 @@
+package Assignment1;
+
+public class Finance {//1.3 User define class
+	private double incomePB, incomeH, incomeN, employeeCost, adCost;
+	
+	//5 arguments
+	Finance(double iPB, double iH, double iN, double eC, double aC) {
+		this.incomePB = iPB;
+		this.incomeH = iH;
+		this.incomeN = iN;
+		this.employeeCost = eC;
+		this.adCost = aC;
+		
+		System.out.printf("\n%s%.2f\n","Total profit: ",totalProfit());	
+	}
+	
+	//count cost
+	public double totalCost() {
+		return (this.employeeCost + this.adCost);
+	}
+	
+	//count revenue
+	public double totalRevenue() {
+		return (this.incomePB + this.incomeH + this.incomeN);
+	}
+	
+	//count profit
+	public double totalProfit() {
+		return (totalRevenue() - totalCost());
+	}	
+
+}
