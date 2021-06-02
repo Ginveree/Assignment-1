@@ -1,0 +1,13 @@
+package Assignment1;
+
+public class Main {
+	public static void main(String[] args) {
+		VisitorAttraction vA = new VisitorAttraction("University Utara Malaysia");
+		Description First = new Description();
+		AdvertisingMethod aM = new AdvertisingMethod("Social Medias","Blogs");
+		SalesNCus s = new SalesNCus(993382,"Abc123");
+		EmpManagement add = new EmpManagement(2);	
+		EmpManagement view = new EmpManagement();	
+		Finance f = new Finance(350222.00, 2333.56, 11564.23, 90000.00, 100000.56);
+	}
+}
